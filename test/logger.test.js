@@ -135,8 +135,6 @@ describe("Logger", function() {
 			Logger.configure();
 			var log = Logger.createLogger();
 			Logger.config.log = function(level) {
-				console.log("LEVEL", level);
-
 				level.should.equal("debug");
 				done();
 			};
@@ -164,6 +162,7 @@ describe("Logger", function() {
 			Logger.configure({ logLevel: "info" });
 			var log = Logger.createLogger("component");
 			log.info("XXXXX");
+			log.debug("XXXXX");
 		});
 	});
 
